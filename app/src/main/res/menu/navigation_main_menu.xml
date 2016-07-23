@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:checkableBehavior="single">
+    <group
+        android:id="@+id/nav_group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:title="@string/app_name" />
+        <item
+            android:id="@+id/nav_offline_manager"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:title="@string/app_name" />
+    </group>
+
+    <group
+        android:id="@+id/nav_group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_favorites"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:title="@string/app_name" />
+
+        <item
+            android:id="@+id/nav_histories"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:title="@string/app_name" />
+
+        <item
+            android:id="@+id/nav_following"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:title="@string/app_name" />
+
+        <item
+            android:id="@+id/nav_pay"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:title="@string/app_name" />
+
+    </group>
+
+    <group
+        android:id="@+id/nav_group3"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_theme"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:orderInCategory="1"
+            android:title="@string/app_name" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:checkable="true"
+            android:icon="@drawable/shap_gray"
+            android:orderInCategory="3"
+            android:title="@string/app_name" />
+    </group>
+</menu>
