@@ -59,10 +59,13 @@ public class SplashActivity extends BaseActivity {
 
     @OnClick(R.id.tv_splash_pass)
     public void onClick() {
-        mHandler.removeCallbacks(r);
         go2Activity(MainActivity.class);
         finish();
     }
 
-
+    @Override
+    protected void onPause() {
+        mHandler.removeCallbacks(r);
+        super.onPause();
+    }
 }
