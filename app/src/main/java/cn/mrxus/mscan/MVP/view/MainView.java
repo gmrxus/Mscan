@@ -27,7 +27,7 @@ public interface MainView {
     /**
      * 显示没有网络提示
      */
-    void shouNotNetwork();
+    void showNotNetwork();
 
     /**
      * 显示progressbar

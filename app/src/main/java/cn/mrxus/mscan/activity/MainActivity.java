@@ -4,13 +4,13 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -20,6 +20,7 @@ import cn.mrxus.mscan.MVP.presenter.MainPresenter;
 import cn.mrxus.mscan.MVP.view.MainView;
 import cn.mrxus.mscan.R;
 import cn.mrxus.mscan.common.BaseActivity;
+import cn.mrxus.mscan.utils.SnackBarUtil;
 
 public class MainActivity extends BaseActivity implements MainView, View.OnClickListener {
 
@@ -36,13 +37,24 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     NavigationView nvMain;
     @BindView(R.id.dl_main_cont)
     DrawerLayout dlMainCont;
+    @BindView(R.id.pb_main)
+    ProgressBar pbMain;
     private PopupWindow popupWindow;
     private MainPresenter presenter;
 
     @Override
     protected void init() {
         presenter = new MainPresenter(this);
+        isHaveNetwork();
         initView();
+
+    }
+
+    /**
+     * 判断是否有网络
+     */
+    private void isHaveNetwork() {
+        presenter.isHaveNetWork();
     }
 
     private void initView() {
@@ -100,18 +112,18 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     }
 
     @Override
-    public void shouNotNetwork() {
-        Snackbar.make(this.dlMainCont, getString(R.string.notHaveNetwork), Snackbar.LENGTH_SHORT).show();
-
+    public void showNotNetwork() {
+        SnackBarUtil.showSnackBar(dlMainCont, getString(R.string.notHaveNetwork), R.color.hyaline_gray);
     }
 
     @Override
     public void shouProgressBar() {
-
+        pbMain.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgressBar() {
+        pbMain.setVisibility(View.GONE);
 
     }
 
@@ -130,4 +142,6 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         super.onDestroy();
         presenter.onDestroy();
     }
+
+
 }

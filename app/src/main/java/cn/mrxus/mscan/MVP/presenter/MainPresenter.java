@@ -3,6 +3,7 @@ package cn.mrxus.mscan.MVP.presenter;
 import cn.mrxus.mscan.MVP.model.MainModel;
 import cn.mrxus.mscan.MVP.model.MainModelImpl;
 import cn.mrxus.mscan.MVP.view.MainView;
+import cn.mrxus.mscan.utils.NetworkUtil;
 
 /**
  * Created by mrxus on 16/7/23.
@@ -37,6 +38,10 @@ public class MainPresenter {
     }
 
     public void isHaveNetWork(){
-
+        if (NetworkUtil.isHaveNetwork()) {
+            return;
+        }else {
+            view.showNotNetwork();
+        }
     }
 }
