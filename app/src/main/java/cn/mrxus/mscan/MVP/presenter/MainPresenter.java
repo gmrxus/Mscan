@@ -31,11 +31,7 @@ public class MainPresenter {
         }
     }
 
-    public void shouSettingPopup() {
-        if (view != null) {
-            view.shouSetting();
-        }
-    }
+
 
     public void isHaveNetWork(){
         if (NetworkUtil.isHaveNetwork()) {

@@ -6,4 +6,5 @@
     <color name="hyaline_gray">#65565656</color>
     <color name="blue_sky">#4696e5</color>
     <color name="white">#eeeeee</color>
+    <color name="hyaline_while">#99ffffff</color>
 </resources>

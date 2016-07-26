@@ -14,15 +14,6 @@ public interface MainView {
      */
     void hideMenu();
 
-    /**
-     * 显示设置弹框
-     */
-    void shouSetting();
-
-    /**
-     * 隐藏设置弹框
-     */
-    void hideSetting();
 
     /**
      * 显示没有网络提示
@@ -32,7 +23,7 @@ public interface MainView {
     /**
      * 显示progressbar
      */
-    void shouProgressBar();
+    void showProgressBar();
 
     /**
      * 隐藏progressbar
@@ -42,7 +33,7 @@ public interface MainView {
     /**
      * 显示没有数据
      */
-    void shouNotHaveData();
+    void showNotHaveData();
 
     /**
      * 隐藏没有数据

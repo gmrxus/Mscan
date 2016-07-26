@@ -1,5 +1,6 @@
 package cn.mrxus.mscan.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -55,6 +56,7 @@ public class SettingActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_setting_back:
+                go2Activity(MainActivity.class);
                 break;
             case R.id.rl_setting_shengyin:
                 break;
