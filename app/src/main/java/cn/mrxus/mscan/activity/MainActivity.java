@@ -16,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -111,6 +112,7 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         switch (view.getId()) {
             case R.id.iv_mian_menu:
                 presenter.shouMenu();
+
                 break;
             case R.id.tv_popup_setting:
                 go2Activity(SettingActivity.class);
@@ -165,10 +167,5 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 }

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/mrxus/Documents/GIT/Mscan/zxing/build/intermediates/res/merged/debug/menu/history.xml",
+        "source": "/Users/mrxus/Documents/GIT/Mscan/zxing/src/main/res/menu/history.xml"
+    },
+    {
+        "merged": "/Users/mrxus/Documents/GIT/Mscan/zxing/build/intermediates/res/merged/debug/menu/encode.xml",
+        "source": "/Users/mrxus/Documents/GIT/Mscan/zxing/src/main/res/menu/encode.xml"
+    },
+    {
+        "merged": "/Users/mrxus/Documents/GIT/Mscan/zxing/build/intermediates/res/merged/debug/menu/capture.xml",
+        "source": "/Users/mrxus/Documents/GIT/Mscan/zxing/src/main/res/menu/capture.xml"
+    }
+]
