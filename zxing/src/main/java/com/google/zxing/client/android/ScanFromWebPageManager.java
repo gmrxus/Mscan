@@ -24,7 +24,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- * Manages functionality related to responding to requests to scan from an HTTP link in a web page.
+ * z
  * See <a href="https://github.com/zxing/zxing/wiki/ScanningFromWebPages">ScanningFromWebPages</a>.
  *
  * @author Sean Owen

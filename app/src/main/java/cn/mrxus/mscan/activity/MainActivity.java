@@ -146,8 +146,6 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     @Override
     public void hideProgressBar() {
         pbMain.setVisibility(View.GONE);
-
-
     }
 
     @Override
