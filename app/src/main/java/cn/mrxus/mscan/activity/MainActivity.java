@@ -37,7 +37,6 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     TextView tvMainTitle;
     @BindView(R.id.fl_main_content)
     FrameLayout flMainContent;
-
     @BindView(R.id.dl_main_cont)
     DrawerLayout dlMainCont;
     @BindView(R.id.pb_main)
@@ -52,6 +51,7 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     private MainPresenter presenter;
     private FragmentTransaction ft;
     private MainFragment mainFragment;
+
 
     @Override
     protected void init() {
