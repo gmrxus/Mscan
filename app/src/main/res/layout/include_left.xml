@@ -24,6 +24,7 @@
                 android:padding="20dp">
 
                 <cn.mrxus.mscan.ui.RoundImageView
+                    android:id="@+id/menu_user"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/icon_head"
@@ -71,6 +72,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/menu_scanner"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
 
@@ -92,6 +94,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/menu_main_page"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
 
@@ -113,6 +116,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/make_code"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
 
@@ -134,6 +138,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/menu_history"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
 
@@ -155,6 +160,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/menu_setting"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
 

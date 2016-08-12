@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import cn.mrxus.mscan.common.Mapplication;
 
 /**
  * Created by mrxus on 16/7/23.
@@ -15,8 +14,8 @@ public class NetworkUtil {
      *
      * @return
      */
-    public static boolean isHaveNetwork() {
-        ConnectivityManager cm = (ConnectivityManager) Mapplication.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+    public static boolean isHaveNetwork(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cm.getActiveNetworkInfo();
 
         return (info != null && info.isConnected());

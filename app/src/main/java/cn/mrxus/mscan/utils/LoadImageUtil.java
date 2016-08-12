@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.widget.ImageView;
 
+
 import com.bumptech.glide.Glide;
 
 import cn.mrxus.mscan.R;
@@ -28,7 +29,7 @@ public class LoadImageUtil {
      * @param <T>
      */
     public static <T extends Context> void loadImgUrl(T t, String imgUrl, ImageView iv) {
-        Glide.with(t)
+            Glide.with(t)
                 .load(imgUrl)
                 .crossFade(1000)
                 .error(R.drawable.img_error)

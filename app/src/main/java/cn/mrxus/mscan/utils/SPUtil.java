@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 
 import java.util.Map;
 
-import cn.mrxus.mscan.common.Mapplication;
 
 /**
  * Created by mrxus on 16/7/23.
@@ -21,8 +20,8 @@ public class SPUtil {
      * @param key
      * @param value
      */
-    public static void put(String key, Object value) {
-        SharedPreferences sp = Mapplication.getContext().getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
+    public static void put(Context context,String key, Object value) {
+        SharedPreferences sp = context.getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         if (value instanceof String) {
             edit.putString(key, (String) value);
@@ -47,8 +46,8 @@ public class SPUtil {
      * @param defValue
      * @return
      */
-    public static Object get(String key, Object defValue) {
-        SharedPreferences sp = Mapplication.getContext().getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
+    public static Object get(Context context,String key, Object defValue) {
+        SharedPreferences sp = context.getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
         if (defValue instanceof String) {
             return sp.getString(key, (String) defValue);
         } else if (defValue instanceof Integer) {
@@ -70,8 +69,8 @@ public class SPUtil {
      *
      * @param key
      */
-    public static void remove(String key) {
-        SharedPreferences sp = Mapplication.getContext().getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
+    public static void remove(Context context,String key) {
+        SharedPreferences sp = context.getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         edit.remove(key);
         edit.apply();
@@ -80,8 +79,8 @@ public class SPUtil {
     /**
      * 清除所有
      */
-    public static void clear() {
-        SharedPreferences sp = Mapplication.getContext().getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
+    public static void clear(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         edit.clear();
         edit.apply();
@@ -94,8 +93,8 @@ public class SPUtil {
      * @param key
      * @return
      */
-    public static boolean isExist(String key) {
-        SharedPreferences sp = Mapplication.getContext().getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
+    public static boolean isExist(Context context,String key) {
+        SharedPreferences sp = context.getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         return sp.contains(key);
     }
@@ -105,8 +104,8 @@ public class SPUtil {
      *
      * @return map
      */
-    public static Map<String, ?> getAll() {
-        SharedPreferences sp = Mapplication.getContext().getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
+    public static Map<String, ?> getAll(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(SP_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         return sp.getAll();
     }

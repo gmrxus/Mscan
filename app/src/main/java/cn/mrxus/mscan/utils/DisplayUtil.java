@@ -6,7 +6,6 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
-import cn.mrxus.mscan.common.Mapplication;
 
 /**
  * Created by mrxus on 16/7/23.
@@ -18,8 +17,8 @@ public class DisplayUtil {
      *
      * @return
      */
-    public static int getScreenWidth() {
-        WindowManager wm = (WindowManager) Mapplication.getContext().getSystemService(Context.WINDOW_SERVICE);
+    public static int getScreenWidth(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
         return dm.widthPixels;
@@ -30,8 +29,8 @@ public class DisplayUtil {
      *
      * @return
      */
-    public static int getScreenHeight() {
-        WindowManager wm = (WindowManager) Mapplication.getContext().getSystemService(Context.WINDOW_SERVICE);
+    public static int getScreenHeight(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
         return dm.heightPixels;
@@ -42,8 +41,8 @@ public class DisplayUtil {
      *
      * @return
      */
-    public static int getNavigationBarHeight() {
-        Resources resources = Mapplication.getContext().getResources();
+    public static int getNavigationBarHeight(Context context) {
+        Resources resources = context.getResources();
         int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
         int height = resources.getDimensionPixelSize(resourceId);
         return height;
@@ -54,8 +53,8 @@ public class DisplayUtil {
      *
      * @return
      */
-    public static int getStatusBarHeight() {
-        Resources resources = Mapplication.getContext().getResources();
+    public static int getStatusBarHeight(Context context) {
+        Resources resources = context.getResources();
         int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
         int height = resources.getDimensionPixelSize(resourceId);
         return height;

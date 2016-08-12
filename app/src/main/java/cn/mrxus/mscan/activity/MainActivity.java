@@ -1,7 +1,7 @@
 package cn.mrxus.mscan.activity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +29,7 @@ import cn.mrxus.mscan.MVP.view.MainView;
 import cn.mrxus.mscan.R;
 import cn.mrxus.mscan.common.BaseActivity;
 import cn.mrxus.mscan.fragment.MainFragment;
+import cn.mrxus.mscan.ui.RoundImageView;
 import cn.mrxus.mscan.utils.SnackBarUtil;
 
 public class MainActivity extends BaseActivity implements MainView, View.OnClickListener {
@@ -47,6 +52,18 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     TextView tvMenuHeadId;
     @BindView(R.id.left)
     LinearLayout left;
+    @BindView(R.id.menu_scanner)
+    LinearLayout menuScanner;
+    @BindView(R.id.menu_user)
+    RoundImageView menuUser;
+    @BindView(R.id.menu_main_page)
+    LinearLayout menuMainPage;
+    @BindView(R.id.make_code)
+    LinearLayout makeCode;
+    @BindView(R.id.menu_history)
+    LinearLayout menuHistory;
+    @BindView(R.id.menu_setting)
+    LinearLayout menuSetting;
     private PopupWindow popupWindow;
     private MainPresenter presenter;
     private FragmentTransaction ft;
@@ -87,7 +104,7 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
      * 判断是否有网络
      */
     private void isHaveNetwork() {
-        presenter.isHaveNetWork();
+        presenter.isHaveNetWork(this);
     }
 
     private void initView() {
@@ -106,21 +123,6 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         return R.layout.activity_main;
     }
 
-
-    @OnClick({R.id.iv_mian_menu})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.iv_mian_menu:
-                presenter.shouMenu();
-
-                break;
-            case R.id.tv_popup_setting:
-                go2Activity(SettingActivity.class);
-                break;
-            case R.id.tv_popup_cancel:
-                break;
-        }
-    }
 
     @Override
     public void showMenu() {
@@ -164,6 +166,46 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         presenter.onDestroy();
     }
 
+    @OnClick({R.id.menu_user, R.id.menu_main_page, R.id.make_code, R.id.menu_history, R.id.menu_setting, R.id.menu_scanner})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.menu_scanner:
+                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
+                break;
+            case R.id.menu_user:
 
+                break;
+            case R.id.menu_main_page:
+                break;
+            case R.id.make_code:
+                break;
+            case R.id.menu_history:
+                break;
+            case R.id.menu_setting:
+                startActivityForResult(new Intent(this, SettingActivity.class), 100);
 
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            //处理扫描结果（在界面上显示）
+            if (null != data) {
+                Bundle bundle = data.getExtras();
+                if (bundle == null) {
+                    return;
+                }
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+                    Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
 }

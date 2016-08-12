@@ -1,5 +1,7 @@
 package cn.mrxus.mscan.MVP.presenter;
 
+import android.content.Context;
+
 import cn.mrxus.mscan.MVP.model.MainModel;
 import cn.mrxus.mscan.MVP.model.MainModelImpl;
 import cn.mrxus.mscan.MVP.view.MainView;
@@ -33,8 +35,8 @@ public class MainPresenter {
 
 
 
-    public void isHaveNetWork(){
-        if (NetworkUtil.isHaveNetwork()) {
+    public void isHaveNetWork(Context context){
+        if (NetworkUtil.isHaveNetwork(context)) {
             return;
         }else {
             view.showNotNetwork();
