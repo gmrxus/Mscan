@@ -1,6 +1,5 @@
-package cn.mrxus.test;
+package cn.mrxus.mscan.scan;
 
-import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
@@ -10,12 +9,12 @@ import android.widget.Toast;
 
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
-
+import cn.mrxus.mscan.R;
 
 /**
- * Created by mrxus on 16/8/12.
+ * Created by mrxus on 16/8/13.
  */
-public class ScannerActivity extends AppCompatActivity implements QRCodeView.Delegate {
+public class ScannerActiity extends AppCompatActivity implements QRCodeView.Delegate {
     private ZXingView zxingView;
 
     @Override
@@ -24,9 +23,7 @@ public class ScannerActivity extends AppCompatActivity implements QRCodeView.Del
         setContentView(R.layout.activity_scanner);
         zxingView = (ZXingView)findViewById(R.id.zxingview);
         zxingView.setDelegate(this);
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -63,6 +60,5 @@ public class ScannerActivity extends AppCompatActivity implements QRCodeView.Del
     public void onScanQRCodeOpenCameraError() {
         Log.e("pengqian", "打开相机出错");
     }
-
 
 }

@@ -55,7 +55,7 @@ public class MainFragment extends BaseFragment {
 
     @Override
     protected void init() {
-        LoadImageUtil.loadImgUrl(this, imgs[1], ivMainBanner);
+        LoadImageUtil.loadImgUrl(this, imgs[0], ivMainBanner);
 
     }
 
@@ -68,26 +68,13 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.bt_main_scan)
     public void onClick() {
-//       startActivityForResult(new Intent(getActivity(), CaptureActivity.class),REQUEST_CODE);
-//        startActivityForResult(new Intent(getActivity(), CaptureActivity.class), REQUEST_CODE);
 
         Toast.makeText(getActivity(), "11", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if(REQUEST_CODE==requestCode){
-//            Bundle mBundle = data.getExtras();
-//            if(mBundle!=null){
-//                if (mBundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
-//                    String result = mBundle.getString(CodeUtils.RESULT_STRING);
-//                    Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
-//                } else if (mBundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
-//
-//                }
-//            }
-//
-//        }
+
     }
 }
 

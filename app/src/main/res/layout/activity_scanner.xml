@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <cn.bingoogolapple.qrcode.zxing.ZXingView
         android:id="@+id/zxingview"
@@ -19,5 +20,4 @@
         app:qrcv_scanLineColor="@color/colorPrimaryDark"
         app:qrcv_scanLineSize="1dp"
         app:qrcv_topOffset="90dp" />
-
 </RelativeLayout>
