@@ -51,7 +51,7 @@ public class ScannerActiity extends AppCompatActivity implements QRCodeView.Dele
 
     @Override
     public void onScanQRCodeSuccess(String result) {
-        Log.i("pengqian", "result:" + result);
+        // TODO: 16/8/13 这里执行扫码结果回馈 
         Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
         vibrate();
         zxingView.startSpot();
