@@ -14,7 +14,7 @@ import cn.mrxus.mscan.R;
 /**
  * Created by mrxus on 16/8/13.
  */
-public class ScannerActiity extends AppCompatActivity implements QRCodeView.Delegate {
+public class ScannerActivity extends AppCompatActivity implements QRCodeView.Delegate {
     private ZXingView zxingView;
 
     @Override
